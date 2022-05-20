@@ -3,4 +3,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "static_pages#index"
+
+  resources :users, only: [:new, :create]
 end
