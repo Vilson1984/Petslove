@@ -1,8 +1,14 @@
-<h1>Hello World! page User, name's page is New<h1>
+<div class="row">
+  <div class="col-xs-12">
+    <h1>Cadastra-se</h1>
+  </div>
 
-
-<!--BLOCO QUE PREPARARÁ A RENDERIZAÇÃO, VARIÁVEL @USER CRIADA EM DEF DE USER_CONTROLLER -->
-<%= form_for @user do |f| %>
+  <div class="col-md-6 col-md-offset-3 col-xs-12">
+    <!--BLOCO QUE PREPARARÁ A RENDERIZAÇÃO, VARIÁVEL @USER CRIADA EM DEF DE USER_CONTROLLER -->
+    <%= form_for @user do |f| %>
+    
+    <%= render 'layouts/error_messages', object: f.object%>
+    
     <div class= "form-group">
         <%= f.label :name %>
         <%= f.text_field :name, class:"form-control"%>
@@ -21,3 +27,5 @@
     </div>
     <%= f.submit 'cadastrar', class:"btn btn_primary"%>
 <%end%>
+</div>
+</div>
