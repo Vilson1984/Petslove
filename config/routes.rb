@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   root "static_pages#index"
 
   resources :users, only: [:new, :create]
+  
+  get 'login', to:'login#login'
 end
