@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
   # Defines the root path route ("/")
   root "static_pages#index"
 
-  resources :users, only: [:new, :create]
+  get 'session/new'
+  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+
   
-  get 'login', to:'login#login'
+  # SEGUINDO AS ROTAS RESTFULL, ROTA DE CADASTRO PARA SESSION
+  get 'entrar', to:'session#new'
+  # ONDE REALIZAMOS O LOGIN, DE FATO
+  post 'entrar', to:'session#create'
+
+  # ROTA SHOW MOSTRARÁ O USUÁRIO LOGADO
+  resources :users, only: [:new, :create, :show]
 end

@@ -3,9 +3,10 @@
 <nav class="navbar bg-light fixed-top">
   <div class="container-fluid">
 
-    <a class="navbar-brand" href="../..">Petslove<!--<%= link_to 'Pestslove',  root_url, class: 'navbar-brand' %>--></a>
-    <a class="navbar-brand" href="users/new">Cadastrar novo usuário</a>
-    <a class="navbar-brand" href="#"> Já possuo cadastro</a>
+    <%= link_to 'Pestslove',  root_url, class: 'navbar-brand' %>
+    <%= link_to 'Cadastrar novo usuário', new_user_path, class:'navbar-brand' %>
+    <%= link_to "Já possuo cadastro", entrar_path,  class: 'navbar-brand' %>
+    
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -42,7 +43,7 @@
         </form>
       </div>
     </div>
-    <%= link_to "Login", login_path %>
+    
   </div>
   
 </nav>
